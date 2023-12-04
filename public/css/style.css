@@ -28,6 +28,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 20px;
+    text-align: center;
 }
 
 .content form {
@@ -41,7 +42,7 @@ body {
 .content input {
     padding: 5px;
     margin: 5px;
-    width: 500px;
+    width: 100%;
 }
 
 .content .msg_success {
