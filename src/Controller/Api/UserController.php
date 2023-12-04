@@ -2,18 +2,25 @@
 
 namespace App\Controller\Api;
 
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
+use Serializable;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\SerializerInterface;
 
 #[Route("/api/v1", name: "api_v1_user_")]
-class UserController
+class UserController extends AbstractController
 {
     #[Route("/list", methods: ["GET"], name: "list")]
-    public function list(): JsonResponse
+    public function list(EntityManagerInterface $entityManager): JsonResponse
     {
-        return new JsonResponse([
-            "message" => "implements select on db"
-        ], 404);
+        $users = $entityManager->getRepository(User::class)->findAll();
+
+        //dump($users->findAll());
+
+        return new JsonResponse($users, 200);
     }
 
     #[Route("/register", methods: ["POST"], name: "register")]
