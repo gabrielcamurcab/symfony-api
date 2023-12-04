@@ -10,9 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 final class DefaultController
 {
-
-    #[Route('/')]
-    public function index(Request $request): Response
+/*     public function index(Request $request): Response
     {
         // Forma 1: return new Response("Deu certo!", 200);
 
@@ -27,5 +25,5 @@ final class DefaultController
         $res->setStatusCode(200);
 
         return $res;
-    }
+    } */
 }
