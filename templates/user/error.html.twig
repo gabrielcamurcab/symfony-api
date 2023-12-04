@@ -13,7 +13,10 @@
 	<div class="content">
 		<h1>Cadastro de Usuário</h1>
 		<div class="container">
-			<p class="msg_error"><strong>{{ fulano }}</strong> não foi cadastrado!</p>
+			<p class="msg_error">
+				<strong>{{ user_name }}</strong>
+				não foi cadastrado!</p>
 		</div>
+		<a href="{{ url('web_user_index') }}">Voltar</a>
 	</div>
 {% endblock %}
