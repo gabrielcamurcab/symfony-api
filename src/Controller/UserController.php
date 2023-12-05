@@ -35,8 +35,5 @@ class UserController extends AbstractController
             return $this->render("user/success.html.twig", ["user_name" => $user->getName()]);
         else
             return $this->render("user/error.html.twig", ["user_name" => $user->getName()]);
-        
-
-        return new Response("Implements save function");
     }
 }
